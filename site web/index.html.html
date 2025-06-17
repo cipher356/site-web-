@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gronosa | Crafting the Future of Digital Expression</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: radial-gradient(circle at 75% 50%, rgba(30, 10, 60, 0.8) 0%, rgba(10, 10, 20, 0.9) 50%);
+        }
+        
+        .project-card {
+            background: linear-gradient(145deg, rgba(20, 20, 40, 0.7) 0%, rgba(10, 10, 30, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(100, 100, 255, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(100, 100, 255, 0.2);
+            border-color: rgba(100, 100, 255, 0.3);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(100, 100, 255, 0.5);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(100, 100, 255, 0.5) 50%, transparent 100%);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #f0f0f0;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #f0f0f0; }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pixel-grid {
+            background-image: 
+                linear-gradient(rgba(100, 100, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 100, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 5px rgba(100, 100, 255, 0.7));
+        }
+        
+        .header-social-icon {
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .header-social-icon:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+        
+        /* Custom icon color for itch.io */
+        .itch-icon {
+            color: #fa5c5c;
+        }
+    </style>
+</head>
+<body class="pixel-grid">
+    <!-- Floating particles background -->
+    <div id="particles-js" class="fixed inset-0 -z-10 opacity-20"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold title-font glow-text">
+                    <span class="text-purple-400">G</span>ronosa
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="hover:text-purple-300 transition-colors">About</a>
+                    <a href="#work" class="hover:text-purple-300 transition-colors">Our Work</a>
+                    <a href="#projects" class="hover:text-purple-300 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-purple-300 transition-colors">Contact</a>
+                    <div class="flex space-x-4 ml-6">
+                        <a href="#" class="header-social-icon text-purple-400" aria-label="Spotify">
+                            <i class="fab fa-spotify text-xl"></i>
+                        </a>
+                        <a href="#" class="header-social-icon text-red-500" aria-label="YouTube">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="header-social-icon text-pink-500" aria-label="TikTok">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="#" class="header-social-icon itch-icon" aria-label="itch.io">
+                            <i class="fab fa-itch-io text-xl"></i>
+                        </a>
+                        <a href="#" class="header-social-icon text-pink-400" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <div class="flex space-x-2">
+                        <a href="#" class="header-social-icon text-purple-400 text-lg">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="#" class="header-social-icon text-red-500 text-lg">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="hover:text-purple-300 transition-colors">About</a>
+                <a href="#work" class="hover:text-purple-300 transition-colors">Our Work</a>
+                <a href="#projects" class="hover:text-purple-300 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-purple-300 transition-colors">Contact</a>
+                <div class="flex justify-center space-x-6 pt-4">
+                    <a href="#" class="header-social-icon text-purple-400 text-xl">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="#" class="header-social-icon text-red-500 text-xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="header-social-icon text-pink-500 text-xl">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="header-social-icon itch-icon text-xl">
+                        <i class="fab fa-itch-io"></i>
+                    </a>
+                    <a href="#" class="header-social-icon text-pink-400 text-xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <!-- ... (rest of the HTML remains unchanged) ... -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-purple-600 opacity-20 blur-3xl"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-blue-600 opacity-20 blur-3xl"></div>
+        </div>
+                
+        <div class="container mx-auto px-6 text-center z-10">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 title-font glow-text">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Crafting</span>
+                <span class="block mt-4">The Future</span>
+                <span class="block">Of Digital Expression</span>
+            </h1>
+            <p class="text-xl md:text-2xl mt-8 max-w-3xl mx-auto opacity-90">
+                We are Gronosa - a collective of professional creatives pushing the boundaries of innovation in digital storytelling.
+            </p>
+            <div class="mt-12">
+                <a href="#about" class="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-bold hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20">
+                    Explore Our World
+                </a>
+            </div>
+        </div>
+                
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+            <a href="#about" class="text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+        
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold title-font mb-4 glow-text">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Who We Are</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
+            </div>
+                        
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800">
+                        <h3 class="text-2xl font-bold mb-4 title-font">Our Vision</h3>
+                        <p class="text-lg mb-6 opacity-90">
+                            Gronosa is a dynamic and forward-thinking team of creators, storytellers, and innovators deeply interested in redefining the world of digital expression.
+                        </p>
+                        <p class="text-lg opacity-90">
+                            We are more than a studio; we're a team of professionals who push each other to create meaning through compelling experiences that inspire, challenge, and connect.
+                        </p>
+                    </div>
+                </div>
+                                
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-purple-900 to-blue-900 p-6 rounded-xl h-full">
+                            <div class="text-4xl mb-4 text-purple-300">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Innovation</h4>
+                            <p class="text-sm opacity-90">Pushing creative boundaries with cutting-edge ideas</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-6 rounded-xl h-full">
+                            <div class="text-4xl mb-4 text-blue-300">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Storytelling</h4>
+                            <p class="text-sm opacity-90">Crafting narratives that captivate and resonate</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-indigo-900 to-purple-900 p-6 rounded-xl h-full">
+                            <div class="text-4xl mb-4 text-indigo-300">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Immersion</h4>
+                            <p class="text-sm opacity-90">Creating deeply engaging experiences</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-violet-900 to-purple-900 p-6 rounded-xl h-full">
+                            <div class="text-4xl mb-4 text-violet-300">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Community</h4>
+                            <p class="text-sm opacity-90">Connecting with audiences in meaningful ways</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <!-- Our Work Section -->
+    <section id="work" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold title-font mb-4 glow-text">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">What We Do</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
+            </div>
+                        
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Game Development -->
+                <div class="project-card rounded-xl p-8">
+                    <div class="text-5xl mb-6 text-purple-400">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 title-font">Game Development</h3>
+                    <p class="mb-6 opacity-90">
+                        We develop a series of entertaining games with immersive experiences, mixing storytelling with dynamic gameplay.
+                    </p>
+                    <button class="know-more-btn mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-sm font-bold hover:from-purple-700 hover:to-blue-700 transition-all">
+                        Know More
+                    </button>
+                    <div class="hidden game-details mt-4">
+                        <p class="opacity-90">
+                            We develop games that give players the ability to actively shape the world and stories they inhabit, whether through narrative-driven adventures or interactive challenges.
+                        </p>
+                    </div>
+                </div>
+                                
+                <!-- Digital Publishing -->
+                <div class="project-card rounded-xl p-8">
+                    <div class="text-5xl mb-6 text-blue-400">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 title-font">Digital Publishing</h3>
+                    <p class="mb-6 opacity-90">
+                        We create digital books, comics, and audio content that tell compelling stories through rich narratives and captivating visuals.
+                    </p>
+                    <button class="know-more-btn mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-sm font-bold hover:from-purple-700 hover:to-blue-700 transition-all">
+                        Know More
+                    </button>
+                    <div class="hidden game-details mt-4">
+                        <p class="opacity-90">
+                            We focus on delivering high-quality, engaging experiences for readers and listeners through immersive sound and visual storytelling.
+                        </p>
+                    </div>
+                </div>
+                                
+                <!-- Content Creation -->
+                <div class="project-card rounded-xl p-8">
+                    <div class="text-5xl mb-6 text-indigo-400">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 title-font">Content Creation</h3>
+                    <p class="mb-6 opacity-90">
+                        We create premium content, ranging from thought-provoking shows and web series to immersive films.
+                    </p>
+                    <button class="know-more-btn mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-sm font-bold hover:from-purple-700 hover:to-blue-700 transition-all">
+                        Know More
+                    </button>
+                    <div class="hidden game-details mt-4">
+                        <p class="opacity-90">
+                            Our team crafts captivating narratives through storytelling, merging visual artistry with innovative concepts to engage and captivate audiences across multiple platforms.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold title-font mb-4 glow-text">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Our Projects</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
+                <p class="text-xl mt-6 max-w-3xl mx-auto opacity-90">
+                    Gronosa is more than just a studio, but rather a collective of professional creatives that push the creative boundaries of innovation.
+                </p>
+            </div>
+            <!-- The Empty Transcript Project -->
+            <div class="project-hero mb-20 rounded-2xl overflow-hidden">
+                <div class="relative z-10 w-full p-12">
+                    <div class="project-content p-8 rounded-2xl">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <img src="Unuutijtvzosled.png"
+                                      alt="The Empty Transcript" class="w-full h-auto rounded-lg">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-3xl font-bold title-font mb-4">The Empty Transcript</h3>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Audio Drama</span>
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Psychological Thriller</span>
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Mystery</span>
+                                </div>
+                                <p class="mb-4 opacity-90">
+                                    The Empty Transcript is a 2.5D narrative game that puts you in the fractured mind of an investigator following bizarre confessions that echo through time. Reality warps, stories twist, and faces converge as you practice mental abilities—backing up things, breaking deceptions, and viewing broken recollections. Beneath it all lurks a horrific force obsessed with devouring minds for some incomprehensible aim no one can imagine. 
+                                </p>
+                                <p class="mb-6 opacity-90">
+                                    Travel through shifting chronologies and distorted testimonies in order to find out not only what happened… but why you were chosen to hear.
+
+                                </p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="#" class="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold hover:from-purple-700 hover:to-blue-700 transition-all">
+                                        play Now
+                                    </a>
+                                    <a href="#" class="px-6 py-2 border border-purple-500 text-purple-400 rounded-lg hover:bg-purple-900 hover:bg-opacity-50 transition-all">
+                                        Project Overview
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- The Cryptic Project -->
+            <div class="project-hero mb-20 rounded-2xl overflow-hidden">
+                <div class="relative z-10 w-full p-12">
+                    <div class="project-content p-8 rounded-2xl">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <img src="rggrsrtq.png"
+                                      alt="The Cryptic" class="w-full h-auto rounded-lg">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-3xl font-bold title-font mb-4">The Cryptic</h3>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Podcast</span>
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Sci-Fi</span>
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Time Travel</span>
+                                </div>
+                                <p class="mb-4 opacity-90">
+                                    Enter the mysterious world of The Radio Station, a podcast set in a post-apocalyptic universe with a time-traveling narrator who weaves together spine-chilling stories with cryptic puzzles and hidden clues into its rich and evolving narrative.
+                                </p>
+                                <p class="mb-6 opacity-90">
+                                    Every episode reveals ghostly tales and enigmatic connections to one larger, twisted lore, making for a captivating experience that will blur the line between fiction and reality. From perfect suspense, mystery, to interactive storytelling perfect for all who love this genre,the cryptic invites one to tune in and disclose the secrets awaiting in the static.
+                                </p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="#" class="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold hover:from-purple-700 hover:to-blue-700 transition-all">
+                                        Listen Now
+                                    </a>
+                                    <a href="#" class="px-6 py-2 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-900 hover:bg-opacity-50 transition-all">
+                                        Episode Guide
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- The Light Pillars Project -->
+            <div class="project-hero mb-20 rounded-2xl overflow-hidden">
+                <div class="relative z-10 w-full p-12">
+                    <div class="project-content p-8 rounded-2xl">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <img src="ssssssssfnnt'ssf111.png"
+                                      alt="The Light Pillars" class="w-full h-auto rounded-lg">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-3xl font-bold title-font mb-4">The Light Pillars</h3>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Horror Game</span>
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Psychological</span>
+                                    <span class="tech-badge px-3 py-1 rounded-full text-sm">Survival</span>
+                                </div>
+                                <p class="mb-4 opacity-90">
+                                    A harrowing journey into the heart of darkness, where the line between reality and nightmare is forever blurred. You play as Jeff Carter, a man haunted by the loss of his family and the guilt of his past. Drawn back to the village where his family perished, Jeff must confront the Abyssal Conflux—a malevolent force that twists reality.
+                                </p>
+                                <p class="mb-6 opacity-90">
+                                    As Jeff delves deeper into the village's dark secrets, he uncovers a web of anomalies, distorted memories, and otherworldly horrors that challenge his sanity and his will to survive. The game features a unique sanity system that affects gameplay and narrative based on the player's choices and actions.
+                                </p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="#" class="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold hover:from-purple-700 hover:to-blue-700 transition-all">
+                                        play now
+                                    </a>
+                                    <a href="#" class="px-6 py-2 border border-indigo-500 text-indigo-400 rounded-lg hover:bg-indigo-900 hover:bg-opacity-50 transition-all">
+                                        Project Overview
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-black bg-opacity-70">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold title-font mb-4 glow-text">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Connect With Us</span>
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
+            <p class="text-xl mt-6 max-w-3xl mx-auto opacity-90">
+                Follow our journey and be part of our creative universe.
+            </p>
+        </div>
+                    
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="md:w-1/2">
+                <div class="bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800">
+                    <h3 class="text-2xl font-bold mb-6 title-font">✉️ Direct Contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-xl">📧</span>
+                            <div>
+                                <p class="font-medium">Email:</p>
+                                <p>gronosaofficial@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-xl">💬</span>
+                            <div>
+                                <p class="font-medium">Discord:</p>
+                                <a href="#" class="text-purple-400 hover:text-purple-300">Join our server</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-xl">🌍</span>
+                            <div>
+                                <p class="font-medium">Location:</p>
+                                <p>Remote Indie Team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            
+            <div class="md:w-1/2">
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="#" class="social-icon text-3xl text-purple-400 hover:text-purple-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon text-3xl text-blue-400 hover:text-blue-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-icon text-3xl text-indigo-400 hover:text-indigo-300">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="#" class="social-icon text-3xl text-violet-400 hover:text-violet-300">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                                    
+                <div class="text-center">
+                    <div class="text-2xl font-bold title-font mb-2 glow-text">
+                        Gronosa Studios
+                    </div>
+                    <p class="opacity-90 mb-4">
+                        Crafting the future of digital expression through innovative storytelling and immersive experiences.
+                    </p>
+                    <a href="https://gronosa.great-site.net/?i=2" class="text-purple-400 hover:text-purple-300">
+                        https://gronosa.great-site.net
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
